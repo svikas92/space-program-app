@@ -42,7 +42,7 @@ const FilterComponent = props => {
 
   return (
     <>
-      <h3 style={{ margin: "10px 10px" }}>Filters</h3>
+      <h3 style={{ padding: "10px" }}>Filters</h3>
       <ToggleFilter handler={onFilterToggle} title={"Launch Year"} filter_key={"launch_year"} values={launchYears} />
       <ToggleFilter handler={onFilterToggle} title={"Successful Launch"} filter_key={"launch_success"} />
       <ToggleFilter handler={onFilterToggle} title={"Successful Landing"} filter_key={"land_success"} />
