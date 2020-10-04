@@ -19,12 +19,12 @@ export default (req, store, context) => {
   return `<!DOCTYPE html>
             <html lang="en">
             <head>
-                ${helmet.title.toString()}
-                ${helmet.meta.toString()}
-                ${helmet.link.toString()}
-                <link rel="stylesheet" type="text/css" href="/main.css">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            ${helmet.title.toString()}
+            ${helmet.meta.toString()}
+            ${helmet.link.toString()}
+            <link rel="stylesheet" type="text/css" href="/main.css">
             </head>
             <body>
               <div id="root">${content}</div>
