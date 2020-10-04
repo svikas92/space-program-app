@@ -7,24 +7,7 @@ import { withRouter } from 'react-router'
 
 const FilterComponent = props => {
   const dispatch = useDispatch();
-  const { history } = props
-
-  const { search } = history.location
-
-  const getCurrentFilterByQueryParams = () => {
-    const query = search.substring(1);
-    const vars = query.split('&');
-    const res = {}
-
-    for (let i = 0; i < vars.length; i++) {
-      const pair = vars[i].split('=');
-      res[pair[0]] = pair[1]
-    }
-
-    return res
-  }
-
-  const queryParamFilters = getCurrentFilterByQueryParams()
+  const { history, filters } = props
 
   const launchYears = Array(15)
     .fill(2006)
@@ -44,9 +27,6 @@ const FilterComponent = props => {
     } else {
       currentFilters[name] = value
     }
-
-    console.log("currentFilters", currentFilters)
-
     let queryString = ""
 
     for (const filterKey in currentFilters) {
@@ -54,7 +34,6 @@ const FilterComponent = props => {
     }
 
     history.push({
-      pathname: "/home",
       search: `${queryString.substring(1)}`
     })
 
