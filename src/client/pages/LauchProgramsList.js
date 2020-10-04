@@ -1,15 +1,17 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types'; // ES6
 import { fetchLaunchPrograms } from '../actions/launchProgramAction';
 import FilterComponent from "../components/Filter"
 import { withRouter } from 'react-router-dom';
 import LaunchProgramDetails from '../components/LaunchProgramDetail';
+import { applyFilters } from '../actions/filterActions';
 
 const LaunchProgramsList = props => {
+  const dispatch = useDispatch()
   const renderLaunchPrograms = () => {
     return props.launchPrograms.map((launchProgram) => (
       <LaunchProgramDetails key={launchProgram.flight_number} launchProgram={launchProgram} />
@@ -31,11 +33,29 @@ const LaunchProgramsList = props => {
     );
   };
 
-  const { fetchLaunchPrograms: loadLaunchPrograms } = props;
+  const { history, fetchLaunchPrograms: loadLaunchPrograms } = props;
+  const { search } = history.location
+
+  const getCurrentFilterByQueryParams = () => {
+    const query = search.substring(1);
+    const vars = query.split('&');
+    const res = {}
+
+    if (query !== "") {
+      for (let i = 0; i < vars.length; i++) {
+        const pair = vars[i].split('=');
+        res[pair[0]] = pair[1]
+      }
+    }
+
+    return res
+  }
+
+  const queryParamFilters = getCurrentFilterByQueryParams()
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    loadLaunchPrograms();
+    dispatch(applyFilters(queryParamFilters))
   }, [loadLaunchPrograms]);
   return (
     <>
@@ -58,10 +78,10 @@ const mapStateToProps = state => {
   };
 };
 
-const loadData = (store, filters) => {
+const loadData = (store) => {
   // For the connect tag we need Provider component but on the server at this moment app is not rendered yet
   // So we need to use store itself to load data
-  return store.dispatch(fetchLaunchPrograms(filters)); // Manually dispatch a network request
+  return
 };
 
 LaunchProgramsList.propTypes = {
