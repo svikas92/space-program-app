@@ -29,8 +29,6 @@ app.use(express.static('public'));
 
 app.get('*', (req, res) => {
     const { query } = req
-    console.log("query", query)
-
     // We create store before rendering html
     const store = createStore();
     // We pass store to renderer
