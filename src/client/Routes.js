@@ -8,7 +8,7 @@ export default [
     routes: [
       {
         ...LaunchProgramsList,
-        path: '/home',
+        path: '/',
         exact: true
       },
       {
