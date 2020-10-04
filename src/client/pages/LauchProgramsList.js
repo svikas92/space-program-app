@@ -22,6 +22,7 @@ const LaunchProgramsList = props => {
     return (
       <Helmet key={Math.random()}>
         <title>SpaceX Launch Programs</title>
+        <meta charset="UTF-8" />
         <meta property="og:title" content="SpaceX Launch Programs" />
         <meta
           name="description"
