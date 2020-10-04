@@ -25,6 +25,7 @@ export default (req, store, context) => {
             ${helmet.meta.toString()}
             ${helmet.link.toString()}
             <link rel="stylesheet" type="text/css" href="/main.css">
+            <link rel="shortcut icon" href="">
             </head>
             <body>
               <div id="root">${content}</div>
