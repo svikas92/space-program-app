@@ -1,8 +1,8 @@
-import { TOOGLE_FILTER } from "../actions/type";
+import { FETCH_LAUNCH_PROGRAMS } from "../actions/type";
 
 export default (state = {}, action) => {
     switch (action.type) {
-        case TOOGLE_FILTER:
+        case FETCH_LAUNCH_PROGRAMS:
             return action.payload.currentFilters
 
         default:
