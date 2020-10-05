@@ -19,8 +19,11 @@ export default (req, store, context) => {
   return `<!DOCTYPE html>
             <html lang="en">
             <head>
+            <meta charset="UTF-8">
+            ${helmet.title.toString()}
+            ${helmet.meta.toString()}
+            ${helmet.link.toString()}
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             
             <meta http-equiv="Content-Language" content="en">
             <meta name="SpaceX Launch Programs" />
@@ -29,9 +32,6 @@ export default (req, store, context) => {
             <meta property="og:site_name" content="SpaceX Launch Program"/>
             <meta itemprop="name" content="SpaceX Launch Program" />
             <meta property="og:url" content="https://ps-launch-programs.herokuapp.com"/>
-            ${helmet.title.toString()}
-            ${helmet.meta.toString()}
-            ${helmet.link.toString()}
             <link rel="stylesheet" type="text/css" href="/main.css">
               <link rel="icon" type="image/x-icon" href="https://www.spacex.com/static/images/favicon.ico">
 	            <link rel="Shortcut Icon" type="image/ico" href="https://www.spacex.com/static/images/favicon.ico">
