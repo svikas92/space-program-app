@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 html {
     width: 100%;
     min-width: 100%;
@@ -65,9 +66,7 @@ img {
 }
 
 .main-container {
-    display: grid;
-    grid-template-columns: auto repeat(3, 1fr);
-    grid-gap: 1em;
+    display: flex;
 }
 
 .launch-program-mission-list {
@@ -78,18 +77,17 @@ img {
     background-color: #fff;
     /*   border: 1px solid black; */
     display: inline-table;
+    margin-right: 12px;
+    width: 17%;
 }
 
 .right-container {
-    /*   border: 1px solid red; */
-    grid-column: 2/5;
+    width: calc(83%);
 }
 
 .launch-program-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1em;
-    grid-auto-rows: minmax(200px, auto);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .launch-program-details {
@@ -127,6 +125,10 @@ img {
 
 .filter-list-value:hover, .filter-list-value-selected {
     background-color: #7DB901;
+}
+
+.launch-program-details {
+    margin: 0 1em 1em 1em;
 }
 
 .launch-program-image {
@@ -167,30 +169,51 @@ img {
     text-align: center;
 }
 
+@media screen and (max-width: 699px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .left-container, .right-container {
+        width: 100%;
+    }
+    .launch-program-details {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 0.5em;
+    }
+    .filter-container {
+        margin: 0;
+    }
+    .launch-program-container {
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 700px) {
+    .launch-program-details {
+        width: calc(50% - 32px);
+    }
+}
+
 @media screen and (max-width: 1024px) {
     #root {
         max-width: 1024px;
     }
-
-    .main-container {
-        grid-template-columns: auto 1fr;
-    }
-
-    .right-container {
-        grid-column: 2/2;
-    }
-
     .launch-program-info-key {
         font-size: 15px;
         font-weight: 600;
     }
-
     .filter-container {
         margin: 0px 16px;
     }
-
     .filter-list-value {
         padding: 4px;
         font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .launch-program-details {
+        width: calc(25% - 32px);
     }
 }
