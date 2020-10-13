@@ -8,20 +8,20 @@ space program app
 
 ### Ligthouse Report
 
-# overall stats
+#### overall stats
 ![alt text](https://github.com/svikas92/space-program-app/blob/dev/lighthouse-report/report.png?raw=true)
 
-# performance report
+#### performance report
 ![alt text](https://github.com/svikas92/space-program-app/blob/dev/lighthouse-report/performance.png?raw=true)
 
-# accessibility report
+#### accessibility report
 ![alt text](https://github.com/svikas92/space-program-app/blob/dev/lighthouse-report/accessibility.png?raw=true)
 
-# best practices
+#### best practices
 ![alt text](https://github.com/svikas92/space-program-app/blob/dev/lighthouse-report/bp.png?raw=true)
 
-# seo report
+#### seo report
 ![alt text](https://github.com/svikas92/space-program-app/blob/dev/lighthouse-report/seo.png?raw=true)
 
-# complete html
+#### complete html
 [a relative link](lighthouse-report/ps-lightroom-report.html)
