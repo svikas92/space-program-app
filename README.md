@@ -7,4 +7,4 @@ space program app
 3. Listing is a page having left part as Filters and right as Program Listing
 
 ### Ligthouse Report
-![alt text](https://github.com/svikas92/space-program-app/blob/dev/ligthhouse-report/report.png?raw=true)
+![alt text](https://github.com/svikas92/space-program-app/blob/dev/lighthouse-report/report.png?raw=true)
