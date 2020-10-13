@@ -24,4 +24,4 @@ space program app
 ![alt text](https://github.com/svikas92/space-program-app/blob/dev/lighthouse-report/seo.png?raw=true)
 
 #### complete html
-[a relative link](lighthouse-report/ps-lightroom-report.html)
+[complete report](lighthouse-report/ps-lightroom-report.html)
